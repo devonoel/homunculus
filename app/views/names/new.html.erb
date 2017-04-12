@@ -1,8 +1,12 @@
 <h1>Generate Names</h1>
 
 <%= form_tag names_path do %>
-  <%= label_tag :names %>
-  <%= text_area_tag :names %>
+  <p>
+    <%= label_tag :names, "Input Seed Names:" %>
+  </p>
+  <p>
+    <%= text_area_tag :names %>
+  </p>
 
-  <%= submit_tag %>
+  <%= submit_tag "Generate" %>
 <% end %>
