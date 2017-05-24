@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524042921) do
+ActiveRecord::Schema.define(version: 20170524054045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "chains", force: :cascade do |t|
+  create_table "generators", force: :cascade do |t|
     t.json     "table"
     t.integer  "user_id"
     t.datetime "created_at", null: false

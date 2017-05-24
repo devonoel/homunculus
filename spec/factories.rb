@@ -5,7 +5,7 @@ FactoryGirl.define do
     password_confirmation "1234"
   end
 
-  factory :chain do
+  factory :generator do
     table {}
   end
 end
