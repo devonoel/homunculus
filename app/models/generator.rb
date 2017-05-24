@@ -4,11 +4,12 @@ class Generator < ApplicationRecord
   MIN_LENGTH = 3
   MAX_LENGTH = 8
 
-  def generate_table!(names)
-    raise TypeError, "Argument must be an array of names" unless names.is_a?(Array)
+  before_create :generate_table!
+
+  def generate_table!
     self.table = {}
 
-    names.each do |name|
+    self.seed.each do |name|
       chars = name.downcase.chars
       chars.each_with_index do |c,i|
         nc = chars[i+1]
@@ -22,8 +23,6 @@ class Generator < ApplicationRecord
         end
       end
     end
-
-    self.save!
   end
 
   def generate_name

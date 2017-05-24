@@ -1,0 +1,10 @@
+<h1><%= @generator.name %> Generator</h1>
+
+<h2>Names:</h2>
+<ul>
+  <% @generator.generate_names(10).each do |name| %>
+    <li><%= name %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back', generators_path %>

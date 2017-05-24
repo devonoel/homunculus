@@ -1,0 +1,12 @@
+<h1>Name Generators</h1>
+
+<% @generators.each do |g| %>
+  <p>
+    <%= link_to g.name, generator_path(g) %>
+  </p>
+  <p>
+    <%= link_to "Delete", generator_path(g), method: :delete %>
+  </p>
+<% end %>
+
+<%= link_to "New Generator", new_generator_path %>
