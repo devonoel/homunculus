@@ -12,8 +12,9 @@ class NamesController < ApplicationController
   def create
     if params[:names]
       input = params[:names].split(',').map { |n| n.strip }
-      chain = Markov.new(input)
-      session[:gen_names] = chain.gen_names(10)
+      chain = Chain.create!(user_id: session[:user_id])
+      chain.generate_table!(input)
+      session[:gen_names] = chain.generate_names(10)
 
       redirect_to names_path
     else

@@ -47,4 +47,12 @@ class Chain < ApplicationRecord
 
     return name.capitalize
   end
+
+  def generate_names(n)
+    return nil if self.table.empty?
+    
+    names = []
+    n.times { names.push(self.generate_name) }
+    names
+  end
 end
