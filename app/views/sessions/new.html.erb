@@ -1,9 +1,15 @@
-<%= form_tag sessions_path do %>
-  <%= label_tag :name %>
-  <%= text_field_tag :name %>
+<%= form_tag sessions_path, id: "login-form" do %>
+  <div class="field">
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+  </div>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <div class="field">
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
 
-  <%= submit_tag "Login" %>
+  <div class="field">
+    <%= submit_tag "Login" %>
+  </div>
 <% end %>

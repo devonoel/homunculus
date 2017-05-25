@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout 'session'
   before_action :require_logout
 
   def new

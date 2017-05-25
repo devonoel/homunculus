@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  layout 'session'
   before_action :require_logout, except: [:destroy]
   before_action :require_login, only: [:destroy]
 
