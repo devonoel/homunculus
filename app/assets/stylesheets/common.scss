@@ -9,11 +9,11 @@ html, body {
   height: 100%;
   width: 100%;
   font-size: 16px;
+  font-family: sans-serif;
 }
 
 body {
-  // background-color: $base-color;
-  background-color: $dark-background;
+  background-color: $base-color;
   color: $text-color;
 }
 
@@ -22,7 +22,6 @@ a {
 }
 
 header {
-  // background-color: $dark-background;
   padding: 20px;
   width: 100%;
 
@@ -47,8 +46,41 @@ header {
 }
 
 #container {
-  max-width: 1000px;
-  margin: 50px auto;
+  max-width: 800px;
+  margin: 10px auto;
   padding: 20px;
   min-height: 75%;
+
+  h1 {
+    margin: 1em 0;
+  }
+
+  h2 {
+    margin: 0.25em 0;
+  }
+}
+
+.field {
+  padding: 5px;
+  label {
+    display: block;
+  }
+
+  input, textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    background-color: $text-color;
+    font-size: 1.25em;
+    border: 2px solid $light-highlight;
+  }
+
+  input[type="submit"] {
+    background-color: $dark-background;
+    color: $text-color;
+    padding: 15px 10px;
+    border: 2px solid $dark-highlight;
+  }
 }

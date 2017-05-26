@@ -1,7 +1,6 @@
 @import "colours.scss";
 
 #session-container {
-  background-color: $base-color;
   padding: 50px;
   max-width: 600px;
   margin: 0 auto;
@@ -10,29 +9,4 @@
   transform: translate(-50%, -50%);
   left: 50%;
   width: 100%;
-}
-
-#new_user, #login-form {
-  .field {
-    padding: 5px;
-    label {
-      display: block;
-    }
-
-    input {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border: none;
-      background-color: $text-color;
-      font-size: 1.25em;
-    }
-
-    input[type="submit"] {
-      background-color: $dark-background;
-      color: $text-color;
-      padding: 15px 10px;
-    }
-  }
 }
