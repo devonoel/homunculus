@@ -7,6 +7,8 @@ class GeneratorsController < ApplicationController
 
   def show
     @generator = Generator.find(params[:id])
+    @num = params[:num].to_i > 0 ? params[:num].to_i : 10
+    @names = @generator.generate_names(@num)
   end
 
   def new

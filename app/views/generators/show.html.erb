@@ -1,8 +1,15 @@
 <h1><%= @generator.name %> Generator</h1>
 
+<%= form_tag generator_path(@generator), class: "refresh", method: :get do %>
+  <%= label_tag "Number of names:" %>
+  <%= number_field_tag :num, @num %>
+  <%= submit_tag "Refresh" %>
+<% end %>
+
 <h2>Names:</h2>
+
 <ul id="generator_list">
-  <% @generator.generate_names(10).each do |name| %>
+  <% @names.each do |name| %>
     <li><%= name %></li>
   <% end %>
 </ul>

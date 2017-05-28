@@ -49,9 +49,10 @@ class Generator < ApplicationRecord
 
   def generate_names(n)
     return nil if self.table.empty?
+    return nil unless n.to_i > 0
 
     names = []
-    n.times { names.push(self.generate_name) }
+    n.to_i.times { names.push(self.generate_name) }
     names
   end
 end

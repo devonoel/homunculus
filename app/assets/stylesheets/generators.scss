@@ -1,6 +1,4 @@
-// Place all the styles related to the generators controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "colours.scss";
 
 #generator_seed {
   height: 200px;
@@ -16,4 +14,23 @@
 
 .generator {
   margin: 20px 0;
+}
+
+form.refresh {
+  margin: 25px 0;
+
+  input, textarea {
+    margin: 0 5px;
+    font-size: 1em;
+    padding: 5px;
+    background-color: $text-color;
+    border: 2px solid $dark-highlight;
+  }
+
+  input[type="submit"] {
+    background-color: $dark-highlight;
+    color: $text-color;
+    padding: 5px 10px;
+    border: 2px solid $dark-background;
+  }
 }
