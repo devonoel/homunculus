@@ -45,6 +45,12 @@ header {
   }
 }
 
+#error-area {
+  h2, ul {
+    margin: 15px;
+  }
+}
+
 #container {
   max-width: 800px;
   margin: 10px auto;

@@ -24,6 +24,16 @@
     </header>
 
     <section id="session-container">
+      <% if flash.alert %>
+        <div id="error-area">
+          <h2>Whoops:</h2>
+          <ul>
+            <% flash.alert.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <%= yield %>
     </section>
   </body>

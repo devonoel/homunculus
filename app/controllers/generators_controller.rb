@@ -20,9 +20,10 @@ class GeneratorsController < ApplicationController
     @generator.seed = generator_params[:seed].split(',').map { |n| n.strip }
     @generator.user = current_user
 
-    if @generator.save!
+    if @generator.save
       redirect_to generators_path
     else
+      flash.now[:alert] = @generator.errors.full_messages
       render :new
     end
   end
@@ -42,6 +43,7 @@ class GeneratorsController < ApplicationController
     if @generator.save
       redirect_to generators_path
     else
+      flash.now[:alert] = @generator.errors.full_messages
       render :edit
     end
   end
