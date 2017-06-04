@@ -6,7 +6,7 @@ class Generator < ApplicationRecord
   MIN_LENGTH = 3
   MAX_LENGTH = 8
 
-  before_create :generate_table!
+  before_save :generate_table!, if: -> { changes[:seed] }
 
   def generate_table!
     self.table = {}
