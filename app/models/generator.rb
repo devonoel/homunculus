@@ -1,4 +1,6 @@
 class Generator < ApplicationRecord
+  validates :name, presence: true
+  validates :seed, presence: true
   belongs_to :user
 
   MIN_LENGTH = 3

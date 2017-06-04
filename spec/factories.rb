@@ -6,6 +6,8 @@ FactoryGirl.define do
   end
 
   factory :generator do
+    sequence(:name) {|n| "generator#{n}"}
+    seed ["foo", "bar", "baz"]
     table {}
   end
 end
