@@ -1,0 +1,15 @@
+<%= form_for @generator do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :seed, "Seed Names" %>
+    <%= f.text_area :seed %>
+  </div>
+
+  <div class="field">
+    <%= f.submit %>
+  </div>
+<% end %>

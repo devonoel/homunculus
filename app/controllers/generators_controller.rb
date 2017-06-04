@@ -27,6 +27,25 @@ class GeneratorsController < ApplicationController
     end
   end
 
+  def edit
+    @generator = Generator.find(params[:id])
+    redirect_to generators_path unless @generator.user == current_user
+    @generator.seed = @generator.seed.join(", ")
+  end
+
+  def update
+    @generator = Generator.find(params[:id])
+    redirect_to generators_path unless @generator.user == current_user
+
+    @generator.name = generator_params[:name]
+    @generator.seed = generator_params[:seed].split(',').map { |n| n.strip }
+    if @generator.save
+      redirect_to generators_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @generator = Generator.find(params[:id])
     @generator.destroy
