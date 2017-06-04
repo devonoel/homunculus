@@ -6,7 +6,7 @@
       <%= link_to g.name, generator_path(g) %>
     </h2>
     <p>
-      <%= link_to "Delete", generator_path(g), method: :delete %> |
+      <%= link_to "Delete", generator_path(g), method: :delete, data: { confirm: "Are you sure?" } %> |
       <%= link_to "Edit", edit_generator_path(g) %>
     </p>
   </div>

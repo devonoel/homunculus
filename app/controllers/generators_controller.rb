@@ -2,7 +2,7 @@ class GeneratorsController < ApplicationController
   before_action :require_login
 
   def index
-    @generators = current_user.generators.order(:name)
+    @generators = current_user.generators.order("LOWER(name)")
   end
 
   def show
