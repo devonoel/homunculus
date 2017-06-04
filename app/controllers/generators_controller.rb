@@ -23,8 +23,8 @@ class GeneratorsController < ApplicationController
     if @generator.save
       redirect_to generators_path
     else
-      flash.now[:alert] = @generator.errors.full_messages
-      render :new
+      flash[:alert] = @generator.errors.full_messages
+      redirect_to new_generator_path
     end
   end
 
@@ -43,8 +43,8 @@ class GeneratorsController < ApplicationController
     if @generator.save
       redirect_to generators_path
     else
-      flash.now[:alert] = @generator.errors.full_messages
-      render :edit
+      flash[:alert] = @generator.errors.full_messages
+      redirect_to edit_generator_path(@generator)
     end
   end
 
